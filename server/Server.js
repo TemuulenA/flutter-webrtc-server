@@ -31,8 +31,9 @@ export default class CallHandler {
 
 
         var options = {
-            key: fs.readFileSync('certs/key.pem'),
-            cert: fs.readFileSync('certs/cert.pem')
+            key: fs.readFileSync('/etc/letsencrypt/live/ballin.mn/privkey.pem'),
+            cert: fs.readFileSync('/etc/letsencrypt/live/ballin.mn/cert.pem'),
+            ca: fs.readFileSync('/etc/letsencrypt/live/ballin.mn/chain.pem'),
         };
 
         var wss_server_port = (process.env.PORT + 1 || 4443);
